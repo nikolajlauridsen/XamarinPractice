@@ -26,17 +26,10 @@ namespace TrainingRooms
             RoomRepository repo = new RoomRepository();
 
             List<TrainingRoom> rooms = repo.GetRooms();
-            rooms.Add(new TrainingRoom
-            {
-                Id = 4,
-                Name = "Test",
-                Location = "B",
-                NumberComputers = 100
-            });
 
             // Change our list to something android understands
-            ArrayAdapter adapter = new ArrayAdapter<TrainingRoom>(this, Resource.Layout.RoomListItem, rooms.ToArray());
-
+            ArrayAdapter adapter = new ArrayAdapter<TrainingRoom>(this, Resource.Layout.RoomListItem, 
+                rooms.ToArray());
             this.ListAdapter = adapter;
         }
 
