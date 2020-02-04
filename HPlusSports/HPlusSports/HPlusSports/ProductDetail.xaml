@@ -4,9 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:design="clr-namespace:HPlusSports.Design;assembly=HPlusSports"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              BindingContext="{x:Static design:ProductModel.Product}"
              mc:Ignorable="d"
              x:Class="HPlusSports.ProductDetail">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:Double" x:Key="xConstant">
+                <On Platform="Android" Value="150"></On>
+                <On Platform="iOS,UWP" Value="100"></On>
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
             <StackLayout Orientation="Vertical" Padding="10,20">
@@ -23,10 +33,17 @@
                 
                 <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <Button Text="Order" x:Name="orderBtn"
-                            Clicked="Handle_Click"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25}"></Button>
+                            Clicked="Handle_Click">
+                        <RelativeLayout.WidthConstraint>
+                            <OnPlatform x:TypeArguments="Constraint">
+                                <On Platform="Android" Value="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.35}"></On>
+                                <On Platform="iOS,UWP" Value="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.25}"></On>
+                            </OnPlatform>
+                        </RelativeLayout.WidthConstraint>
+                    </Button>
                     <Button Text="Favorite"
-                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=orderBtn, Property=X, Constant=100}"></Button>
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=orderBtn, 
+                        Property=X, Constant={StaticResource Key=xConstant}}"></Button>
                 </RelativeLayout>
             </StackLayout>
         </ScrollView>
