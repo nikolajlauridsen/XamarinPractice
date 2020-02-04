@@ -41,7 +41,7 @@
                             </OnPlatform>
                         </RelativeLayout.WidthConstraint>
                     </Button>
-                    <Button Text="Favorite"
+                    <Button Text="Favorite" Clicked="Handle_Favorite"
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=orderBtn, 
                         Property=X, Constant={StaticResource Key=xConstant}}"></Button>
                 </RelativeLayout>

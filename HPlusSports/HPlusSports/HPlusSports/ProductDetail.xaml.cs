@@ -33,5 +33,11 @@ namespace HPlusSports
                     Quantity = 1
                 }));
         }
+
+        public void Handle_Favorite(object sender, EventArgs e)
+        {
+            Product p = BindingContext as Product;
+            ProductService.WishList.Add(p);
+        }
     }
 }
