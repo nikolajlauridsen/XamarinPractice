@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -31,6 +32,19 @@ namespace TrainingRooms
             this.ListAdapter = adapter;
         }
 
-	}
+        protected override void OnListItemClick(ListView l, View v, int position, long id)
+        {
+            base.OnListItemClick(l, v, position, id);
+
+            // Create an intent to signal what we intent to do, IE. Open TrainingRoomDetailActivity from MainActivity
+            Intent intent = new Intent(this, typeof(TrainingRoomDetailActivity));
+            // Get the selected TrainingRoom from the ListAdapter
+            TrainingRoom selectedItem = ((ArrayAdapter<TrainingRoom>) ListAdapter).GetItem(position);
+            // Add extra information to the intent (The room id)
+            intent.PutExtra("roomId", selectedItem.Id);
+            // Navigate to the TrainingRoomDetailActivity
+            StartActivity(intent);
+        }
+    }
 }
 
