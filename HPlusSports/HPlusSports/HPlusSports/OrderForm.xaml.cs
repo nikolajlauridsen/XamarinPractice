@@ -9,7 +9,8 @@ using Xamarin.Forms.Xaml;
 
 namespace HPlusSports
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    // Since we're using platform specific controls in this view we can't precompile the xaml
+    [XamlCompilation(XamlCompilationOptions.Skip)]
     public partial class OrderForm : TabbedPage
     {
         public OrderForm()
