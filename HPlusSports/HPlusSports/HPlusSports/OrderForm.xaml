@@ -49,7 +49,7 @@
                 
                 <Label Text="Quantity" Grid.Row="1"></Label>
                 <!--<Entry Text="{Binding Path=Quantity, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"></Entry>-->
-                <local:Entry Text="{Binding Path=Quantity, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"></local:Entry>
+                <local:NumberEntry Text="{Binding Path=Quantity, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"></local:NumberEntry>
                 
                 <Stepper Value="{Binding Path=Quantity, Mode=TwoWay}" Grid.Column="2" Grid.Row="1"></Stepper>
 
