@@ -20,12 +20,14 @@ namespace HPlusSports
 
         public Favorites(List<Product> p)
         {
+            InitializeComponent();
             BindingContext = p;
         }
 
-        public void Item_Selected()
+        public void Item_Selected(object sender, SelectionChangedEventArgs e)
         {
-
+            Product p = e.CurrentSelection.First() as Product;
+            Navigation.PushAsync(new ProductDetail(p));
         }
     }
 }

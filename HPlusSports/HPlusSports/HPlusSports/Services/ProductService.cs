@@ -14,10 +14,31 @@ namespace HPlusSports.Services
         private const string WISHLIST_FILE = "wishlist.json";
 		static HttpClient client;
 
-        public static List<Product> WishList
+        private static List<Product> WishList
         {
             get;
             set;
+        }
+
+        public static void AddFavorite(Product p)
+        {
+            // Main create new product objects every time it's opened
+            // Therefore we need to check on something else than just List.Contains
+            if (WishList.Find(pr=> pr.Id == p.Id) == null)
+            {
+                WishList.Add(p);
+            }
+        }
+
+        public static void ClearFavorites()
+        {
+            WishList.Clear();
+        }
+
+        public static List<Product> GetFavorites()
+        {
+            // Return a copy of the list to make sure it doesn't get tampered with
+            return new List<Product>(WishList);
         }
 
         static ProductService()

@@ -7,7 +7,7 @@
              x:Class="HPlusSports.MainPage">
 
     <StackLayout>
-        <Button Text="Favorites"></Button>
+        <Button Text="Favorites" Clicked="Button_Clicked"></Button>
         <CollectionView SelectionMode="Single" SelectionChanged="Item_Selected" ItemsSource="{Binding}">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2"></GridItemsLayout>
