@@ -32,7 +32,8 @@ namespace HPlusSports.Services
 
         public static void ClearFavorites()
         {
-            WishList.Clear();
+            string path = Path.Combine(FileSystem.AppDataDirectory, WISHLIST_FILE);
+            File.Delete(path);
         }
 
         public static List<Product> GetFavorites()
