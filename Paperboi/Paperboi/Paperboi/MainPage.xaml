@@ -7,6 +7,10 @@
              mc:Ignorable="d"
              x:Class="Paperboi.MainPage">
 
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="2" Clicked="MenuItem_OnClicked"></ToolbarItem>
+    </TabbedPage.ToolbarItems>
+
     <TabbedPage.Children>
         <pages:Page1 Title="Page 1"></pages:Page1>
         <pages:TestingPage Title="Testing"></pages:TestingPage>

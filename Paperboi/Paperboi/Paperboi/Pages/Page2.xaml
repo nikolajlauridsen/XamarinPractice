@@ -4,10 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Paperboi.Pages.Page1">
+             x:Class="Paperboi.Pages.Page2"
+             Title="Page 2">
     <ContentPage.Content>
-        <StackLayout Margin="40">
-            <Button Text="Go to Page 2" Clicked="Button_OnClicked"></Button>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

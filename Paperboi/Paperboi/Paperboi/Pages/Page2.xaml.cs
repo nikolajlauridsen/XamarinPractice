@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Paperboi.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class Page2 : ContentPage
     {
-        public Page1()
+        public Page2()
         {
             InitializeComponent();
-        }
-
-        private async void Button_OnClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Page2());
         }
     }
 }

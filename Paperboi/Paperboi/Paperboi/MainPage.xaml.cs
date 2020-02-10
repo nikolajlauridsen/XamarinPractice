@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Paperboi.Pages;
 using Xamarin.Forms;
 
 namespace Paperboi
@@ -21,6 +22,11 @@ namespace Paperboi
         protected override void OnAppearing()
         {
             base.OnAppearing();
+        }
+
+        private async void MenuItem_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Page2());
         }
     }
 }
