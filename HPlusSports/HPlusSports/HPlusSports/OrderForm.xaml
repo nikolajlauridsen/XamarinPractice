@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
+             xmlns:droid="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
+             xmlns:localdroid="clr-namespace:HPlusSports.Droid;assembly=HPlusSports.Android;targetPlatform=Android"
+             xmlns:local="clr-namespace:HPlusSports.Controls;assembly=HPlusSports"
              mc:Ignorable="d"
              x:Class="HPlusSports.OrderForm">
     <TabbedPage.Resources>
@@ -44,10 +48,31 @@
                 <Label Text="{Binding Path=ProductName}" Grid.Column="1" Grid.ColumnSpan="2"></Label>
                 
                 <Label Text="Quantity" Grid.Row="1"></Label>
-                <Entry Text="{Binding Path=Quantity, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"></Entry>
+                <!--<Entry Text="{Binding Path=Quantity, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"></Entry>-->
+                <local:NumberEntry Text="{Binding Path=Quantity, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"></local:NumberEntry>
+                
                 <Stepper Value="{Binding Path=Quantity, Mode=TwoWay}" Grid.Column="2" Grid.Row="1"></Stepper>
 
                 <Button Text="Order" Clicked="Handle_Clicked" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center"></Button>
+
+                <droid:RatingBar NumStars="5" StepSize="1" Grid.Row="3" Grid.ColumnSpan="3" View.HorizontalOptions="Center"
+                                 Rating="{Binding Path=Rating, Mode=TwoWay, UpdateSourceEventName=RatingBarChange}"
+                                 x:Arguments="{x:Static localdroid:MainActivity.Instance}">
+                    
+                </droid:RatingBar>
+
+                <ios:UiSegmentedControl Grid.Row="3" Grid.ColumnSpan="3" View.HorizontalOptions="Center"
+                                        SelectedSegment="{Binding Path=Rating, Mode=TwoWay, UpdateSourceEventName=ValueChanged}">
+                    <x:Arguments>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                        </x:Array>
+                    </x:Arguments>
+                </ios:UiSegmentedControl>
             </Grid>
         </ContentPage>
         <ContentPage Title="History">

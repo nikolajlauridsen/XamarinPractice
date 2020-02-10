@@ -15,6 +15,21 @@ namespace HPlusSports.Services
             set;
         }
 
+        private int rate;
+
+        public int Rating
+        {
+            get { return rate; }
+            set
+            {
+                if (value != rate)
+                {
+                    rate = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Rating"));
+                }
+            }
+        }
+
         private int qty;
 
         public int Quantity

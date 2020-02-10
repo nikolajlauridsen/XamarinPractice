@@ -62,6 +62,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controls\NumberEntryRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -136,4 +137,5 @@
       <Name>HPlusSports</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
 </Project>

@@ -9,7 +9,9 @@ using Xamarin.Forms.Xaml;
 
 namespace HPlusSports
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    // Since we're using platform specific controls in this view we can't precompile the xaml
+    // It compiles the xaml on the device instead
+    [XamlCompilation(XamlCompilationOptions.Skip)]
     public partial class OrderForm : TabbedPage
     {
         public OrderForm()
@@ -26,7 +28,12 @@ namespace HPlusSports
         public void Handle_Clicked(object sender, EventArgs e)
         {
             Order o = BindingContext as Order;
-            DisplayAlert("Order Placed", $"Order placed for {o.Quantity} of {o.ProductName}", "OK");
+            if(Device.RuntimePlatform == Device.iOS)
+            {
+                // Increase rating with one since segmented controls is zero based
+                o.Rating += 1;
+            }
+            DisplayAlert("Order Placed", $"Order placed for {o.Quantity} of {o.ProductName} and you rated it {o.Rating}", "OK");
         }
     }
 }

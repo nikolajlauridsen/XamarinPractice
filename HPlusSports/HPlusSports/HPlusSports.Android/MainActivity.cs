@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 
 namespace HPlusSports.Droid
 {
@@ -28,6 +29,12 @@ namespace HPlusSports.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        // A shortcut to get a context
+        public static Context Instance
+        {
+            get { return Application.Context; }
         }
     }
 }
