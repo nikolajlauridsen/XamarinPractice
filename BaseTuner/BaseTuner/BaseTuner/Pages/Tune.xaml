@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:BaseTuner.Controls"
+             mc:Ignorable="d"
+             x:Class="BaseTuner.Pages.Tune">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Margin="20">
+
+                <Label Style="{StaticResource LargeHeader}">Weight ratio</Label>
+                <local:NumberEntry Placeholder="0.6" Keyboard="Numeric" Text="{Binding WeightRatio}"></local:NumberEntry>
+
+                <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Roll bars</Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
+                    <local:NumberEntry WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding RollMin}"></local:NumberEntry>
+
+                    <Label Padding="50,0,0,0" Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
+                    <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding RollMax}"></local:NumberEntry>
+                </StackLayout>
+
+                <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Springs</Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
+                    <local:NumberEntry WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding SpringsMin}"></local:NumberEntry>
+
+                    <Label Padding="50,0,0,0" Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
+                    <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding SpringsMax}"></local:NumberEntry>
+                </StackLayout>
+
+                <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Shocks Compression</Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
+                    <local:NumberEntry WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding CompMin}"></local:NumberEntry>
+
+                    <Label Padding="50,0,0,0" Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
+                    <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding CompMax}"></local:NumberEntry>
+                </StackLayout>
+
+                <Button Text="Calculate" Clicked="CalcClick"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
