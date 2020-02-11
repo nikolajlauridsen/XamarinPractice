@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -6,6 +7,18 @@ namespace TunerLib
 {
     public class Tuner : INotifyPropertyChanged
     {
+        private Dictionary<string, string[]> depMap = new Dictionary<string, string[]>
+        {
+            { "WeightRatio", new[] {"RollFront", "RollRear", "SpringsFront", "SpringsRear", "CompFront", "CompRear"} },
+            {"RollMin", new[]{"RollFront", "RollRear" } },
+            {"RollMax", new[]{"RollFront", "RollRear" } },
+            {"SpringsMin", new[]{"SpringsFront", "SpringsRear" } },
+            {"SpringsMax", new[]{"SpringsFront", "SpringsRear" } },
+            {"CompMin", new[]{"CompFront", "CompRear" } },
+            {"CompMax", new[]{"CompFront", "CompRear" } },
+            {"CompFront", new[]{"ReboundFront"} },
+            {"CompRear", new[]{"ReboundRear"} }
+        };
         public event PropertyChangedEventHandler PropertyChanged;
         public double WeightRatio { get; set; }
         public double RollMin { get; set; }
@@ -70,6 +83,13 @@ namespace TunerLib
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (depMap.ContainsKey(propertyName))
+            {
+                foreach(string p in depMap[propertyName])
+                {
+                    NotifyPropertyChanged(p);
+                }
+            }
         }
 
 
