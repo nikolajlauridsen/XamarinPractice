@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Paperboi.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Paperboi.UWP"
+    RequestedTheme="Light">
+
+</Application>
