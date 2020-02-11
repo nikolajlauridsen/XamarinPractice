@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace TunerLib
 {
@@ -10,7 +11,6 @@ namespace TunerLib
         public double RollMin { get; set; }
         public double RollMax { get; set; }
 
-        [PropertyChangeDependsOn(]
         public double RollFront { 
             get 
             {
@@ -65,6 +65,11 @@ namespace TunerLib
         private double calcBase(double min, double max, double ratio)
         {
             return (max - min) * ratio + min;
+        }
+
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
 
