@@ -18,13 +18,9 @@ namespace BaseTuner.Pages
         public Tune()
         {
             InitializeComponent();
+
             _tuner = new Tuner();
             BindingContext = _tuner;
-        }
-
-        public void CalcClick(object sender, EventArgs e)
-        {
-            double wRatio = _tuner.WeightRatio;
         }
     }
 }
