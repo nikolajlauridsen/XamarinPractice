@@ -137,13 +137,13 @@ namespace TunerLib
         {
             WeightRatio = 0.50;
 
-            RollMin = 50.5;
-            RollMax = 215.5;
+            RollMin = 1;
+            RollMax = 65;
 
-            SpringsMin = 50.5;
-            SpringsMax = 215.5;
+            SpringsMin = 37.5;
+            SpringsMax = 187.5;
 
-            CompMin = 1;
+            CompMin = 3;
             CompMax = 20;
         }
 
