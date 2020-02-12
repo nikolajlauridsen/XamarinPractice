@@ -51,7 +51,7 @@
 
                     <StackLayout Orientation="Horizontal" Grid.Row="1">
                         <Label Style="{StaticResource MediumHeader}">Front:</Label>
-                        <Label Style="{StaticResource MediumHeader}" Text="{Binding SpringsFront}" Padding="0,0,93,0"></Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding SpringsFront}"></Label>
                     </StackLayout>
                     
                     <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
@@ -84,14 +84,16 @@
                 </Grid>
                 
                 <Label Style="{StaticResource LargeHeader}">Shocks Rebound</Label>
-                <StackLayout Orientation="Horizontal">
-                    <Label Style="{StaticResource MediumHeader}">Front:</Label>
-                    <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundFront}" Padding="0,0,120,0"></Label>
-
-                    <Label Style="{StaticResource MediumHeader}">Rear:</Label>
-                    <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundRear}"></Label>
-                </StackLayout>
-
+                <Grid>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource MediumHeader}">Front:</Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundFront}"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1">
+                        <Label Style="{StaticResource MediumHeader}">Rear:</Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundRear}"></Label>
+                    </StackLayout>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
