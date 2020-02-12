@@ -27,7 +27,7 @@ namespace TunerLib
             set 
             {
                 _weightRatio = value;
-                NotifyPropertyChanged("WeightRatio");
+                NotifyPropertyChanged();
             } 
         }
         private double _rollMin;
@@ -36,7 +36,7 @@ namespace TunerLib
             set 
             {
                 _rollMin = value;
-                NotifyPropertyChanged("RollMin");
+                NotifyPropertyChanged();
             } 
         }
 
@@ -46,7 +46,7 @@ namespace TunerLib
             set
             {
                 _rollMax = value;
-                NotifyPropertyChanged("RollMax");
+                NotifyPropertyChanged();
             }
         }
 
@@ -59,7 +59,7 @@ namespace TunerLib
             set
             {
                 _springsMin = value;
-                NotifyPropertyChanged("SpringsMin");
+                NotifyPropertyChanged();
             }
         }
 
@@ -69,7 +69,7 @@ namespace TunerLib
             set
             {
                 _springsMax = value;
-                NotifyPropertyChanged("SpringsMax");
+                NotifyPropertyChanged();
             } 
         }
         public double SpringsFront => calcBase(SpringsMin, SpringsMax, WeightRatio);
@@ -80,7 +80,7 @@ namespace TunerLib
             set
             {
                 _reboundMin = value;
-                NotifyPropertyChanged("ReboundMin");
+                NotifyPropertyChanged();
             } 
         }
 
@@ -89,7 +89,7 @@ namespace TunerLib
             set
             {
                 _reboundMax = value;
-                NotifyPropertyChanged("ReboundMax");
+                NotifyPropertyChanged();
             } 
         }
 

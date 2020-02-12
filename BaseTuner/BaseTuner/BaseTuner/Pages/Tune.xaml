@@ -65,12 +65,12 @@
                 <Grid>
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
-                        <local:NumberEntry WidthRequest="80" Placeholder="1" Keyboard="Numeric" Text="{Binding CompMin}"></local:NumberEntry>
+                        <local:NumberEntry WidthRequest="80" Placeholder="1" Keyboard="Numeric" Text="{Binding ReboundMin}"></local:NumberEntry>
                     </StackLayout>
                     
                     <StackLayout Orientation="Horizontal" Grid.Column="1">
                         <Label  Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
-                        <local:NumberEntry WidthRequest="80" Placeholder="20" Keyboard="Numeric" Text="{Binding CompMax}"></local:NumberEntry>
+                        <local:NumberEntry WidthRequest="80" Placeholder="20" Keyboard="Numeric" Text="{Binding ReboundMax}"></local:NumberEntry>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" Grid.Row="1">
