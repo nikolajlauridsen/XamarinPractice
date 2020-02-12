@@ -22,6 +22,14 @@
                     <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding RollMax}"></local:NumberEntry>
                 </StackLayout>
 
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource MediumHeader}">Front:  </Label>
+                    <Label Style="{StaticResource MediumHeader}" Text="{Binding RollFront}" Padding="0,0,120,0"></Label>
+
+                    <Label Style="{StaticResource MediumHeader}">Rear:</Label>
+                    <Label Style="{StaticResource MediumHeader}" Text="{Binding RollRear}"></Label>
+                </StackLayout>
+
                 <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Springs</Label>
                 <StackLayout Orientation="Horizontal">
                     <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
@@ -29,6 +37,14 @@
 
                     <Label Padding="50,0,0,0" Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
                     <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding SpringsMax}"></local:NumberEntry>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource MediumHeader}">Front:</Label>
+                    <Label Style="{StaticResource MediumHeader}" Text="{Binding SpringsFront}" Padding="0,0,120,0"></Label>
+
+                    <Label Style="{StaticResource MediumHeader}">Rear:</Label>
+                    <Label Style="{StaticResource MediumHeader}" Text="{Binding SpringsRear}"></Label>
                 </StackLayout>
 
                 <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Shocks Compression</Label>
@@ -40,7 +56,23 @@
                     <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding CompMax}"></local:NumberEntry>
                 </StackLayout>
 
-                <Button Text="Calculate" Clicked="CalcClick"></Button>
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource MediumHeader}">Front:</Label>
+                    <Label Style="{StaticResource MediumHeader}" Text="{Binding CompFront}" Padding="0,0,120,0"></Label>
+
+                    <Label Style="{StaticResource MediumHeader}">Rear:</Label>
+                    <Label Style="{StaticResource MediumHeader}" Text="{Binding CompRear}"></Label>
+                </StackLayout>
+
+                <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Shocks Rebound</Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource MediumHeader}">Front:</Label>
+                    <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundFront}" Padding="0,0,120,0"></Label>
+
+                    <Label Style="{StaticResource MediumHeader}">Rear:</Label>
+                    <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundRear}"></Label>
+                </StackLayout>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
