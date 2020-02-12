@@ -61,7 +61,7 @@
                 </Grid>
 
 
-                <Label Style="{StaticResource LargeHeader}">Shocks Compression</Label>
+                <Label Style="{StaticResource LargeHeader}">Rebound</Label>
                 <Grid>
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
