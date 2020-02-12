@@ -8,63 +8,82 @@
              x:Class="BaseTuner.Pages.Tune">
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
-            <StackLayout Orientation="Vertical" Margin="20">
+            <StackLayout Orientation="Vertical" Margin="20" HorizontalOptions="Center">
 
                 <Label Style="{StaticResource LargeHeader}">Weight ratio</Label>
                 <local:NumberEntry Placeholder="0.6" Keyboard="Numeric" Text="{Binding WeightRatio}"></local:NumberEntry>
 
                 <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Roll bars</Label>
-                <StackLayout Orientation="Horizontal">
-                    <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
-                    <local:NumberEntry WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding RollMin}"></local:NumberEntry>
+                <Grid>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
+                        <local:NumberEntry HorizontalOptions="Start"  WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding RollMin}"></local:NumberEntry>
+                    </StackLayout>
 
-                    <Label Padding="50,0,0,0" Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
-                    <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding RollMax}"></local:NumberEntry>
-                </StackLayout>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1">
+                        <Label  Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
+                        <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding RollMax}"></local:NumberEntry>
+                    </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
-                    <Label Style="{StaticResource MediumHeader}">Front:  </Label>
-                    <Label Style="{StaticResource MediumHeader}" Text="{Binding RollFront}" Padding="0,0,120,0"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Row="1">
+                        <Label Style="{StaticResource MediumHeader}">Front:  </Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding RollFront}"></Label>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                        <Label Style="{StaticResource MediumHeader}">Rear:</Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding RollRear}"></Label>
+                    </StackLayout>
+                </Grid>
+                
+                
+                <Label Style="{StaticResource LargeHeader}">Springs</Label>
+                <Grid>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
+                        <local:NumberEntry WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding SpringsMin}"></local:NumberEntry>
+                    </StackLayout>
 
-                    <Label Style="{StaticResource MediumHeader}">Rear:</Label>
-                    <Label Style="{StaticResource MediumHeader}" Text="{Binding RollRear}"></Label>
-                </StackLayout>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1">
+                        <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
+                        <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding SpringsMax}"></local:NumberEntry>
+                    </StackLayout>
 
-                <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Springs</Label>
-                <StackLayout Orientation="Horizontal">
-                    <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
-                    <local:NumberEntry WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding SpringsMin}"></local:NumberEntry>
+                    <StackLayout Orientation="Horizontal" Grid.Row="1">
+                        <Label Style="{StaticResource MediumHeader}">Front:</Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding SpringsFront}" Padding="0,0,93,0"></Label>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                        <Label Style="{StaticResource MediumHeader}">Rear:</Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding SpringsRear}"></Label>
+                    </StackLayout>
+                </Grid>
 
-                    <Label Padding="50,0,0,0" Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
-                    <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding SpringsMax}"></local:NumberEntry>
-                </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
-                    <Label Style="{StaticResource MediumHeader}">Front:</Label>
-                    <Label Style="{StaticResource MediumHeader}" Text="{Binding SpringsFront}" Padding="0,0,120,0"></Label>
+                <Label Style="{StaticResource LargeHeader}">Shocks Compression</Label>
+                <Grid>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
+                        <local:NumberEntry WidthRequest="80" Placeholder="1" Keyboard="Numeric" Text="{Binding CompMin}"></local:NumberEntry>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" Grid.Column="1">
+                        <Label  Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
+                        <local:NumberEntry WidthRequest="80" Placeholder="20" Keyboard="Numeric" Text="{Binding CompMax}"></local:NumberEntry>
+                    </StackLayout>
 
-                    <Label Style="{StaticResource MediumHeader}">Rear:</Label>
-                    <Label Style="{StaticResource MediumHeader}" Text="{Binding SpringsRear}"></Label>
-                </StackLayout>
-
-                <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Shocks Compression</Label>
-                <StackLayout Orientation="Horizontal">
-                    <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
-                    <local:NumberEntry WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding CompMin}"></local:NumberEntry>
-
-                    <Label Padding="50,0,0,0" Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
-                    <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding CompMax}"></local:NumberEntry>
-                </StackLayout>
-
-                <StackLayout Orientation="Horizontal">
-                    <Label Style="{StaticResource MediumHeader}">Front:</Label>
-                    <Label Style="{StaticResource MediumHeader}" Text="{Binding CompFront}" Padding="0,0,120,0"></Label>
-
-                    <Label Style="{StaticResource MediumHeader}">Rear:</Label>
-                    <Label Style="{StaticResource MediumHeader}" Text="{Binding CompRear}"></Label>
-                </StackLayout>
-
-                <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Shocks Rebound</Label>
+                    <StackLayout Orientation="Horizontal" Grid.Row="1">
+                        <Label Style="{StaticResource MediumHeader}">Front:</Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding CompFront}"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                        <Label Style="{StaticResource MediumHeader}">Rear:</Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding CompRear}"></Label>
+                    </StackLayout>
+                </Grid>
+                
+                <Label Style="{StaticResource LargeHeader}">Shocks Rebound</Label>
                 <StackLayout Orientation="Horizontal">
                     <Label Style="{StaticResource MediumHeader}">Front:</Label>
                     <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundFront}" Padding="0,0,120,0"></Label>
