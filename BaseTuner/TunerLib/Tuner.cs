@@ -16,17 +16,14 @@ namespace TunerLib
             {"SpringsMax", new[]{"SpringsFront", "SpringsRear" } },
             {"CompMin", new[]{"CompFront", "CompRear" } },
             {"CompMax", new[]{"CompFront", "CompRear" } },
-            {"CompFront", new[]{"ReboundFront"} },
-            {"CompRear", new[]{"ReboundRear"} }
+            {"CompFront", new[]{"BumpFront"} },
+            {"CompRear", new[]{"BumpRear"} }
         };
         public event PropertyChangedEventHandler PropertyChanged;
 
         private double _weightRatio;
         public double WeightRatio { 
-            get 
-            {
-                return _weightRatio;
-            }
+            get => _weightRatio;
             set 
             {
                 _weightRatio = value;
@@ -35,8 +32,7 @@ namespace TunerLib
         }
         private double _rollMin;
         public double RollMin {
-            get 
-            { return _rollMin; }
+            get => _rollMin;
             set 
             {
                 _rollMin = value;
@@ -46,8 +42,7 @@ namespace TunerLib
 
         private double _rollMax;
         public double RollMax {
-            get
-            { return _rollMax; }
+            get => _rollMax;
             set
             {
                 _rollMax = value;
@@ -55,22 +50,12 @@ namespace TunerLib
             }
         }
 
-        public double RollFront { 
-            get 
-            {
-                return calcBase(RollMin, RollMax, WeightRatio);
-            } 
-        }
-        public double RollRear {
-            get
-            {
-                return calcBase(RollMin, RollMax, (1 - WeightRatio));
-            }
-        }
+        public double RollFront => calcBase(RollMin, RollMax, WeightRatio);
+        public double RollRear => calcBase(RollMin, RollMax, (1 - WeightRatio));
 
         private double _springsMin;
         public double SpringsMin {
-            get { return _springsMin; }
+            get => _springsMin;
             set
             {
                 _springsMin = value;
@@ -80,25 +65,15 @@ namespace TunerLib
 
         private double _springsMax;
         public double SpringsMax {
-            get { return _springsMax; }
+            get => _springsMax;
             set
             {
                 _springsMax = value;
                 NotifyPropertyChanged("SpringsMax");
             } 
         }
-        public double SpringsFront {
-            get
-            {
-                return calcBase(SpringsMin, SpringsMax, WeightRatio);
-            }
-        }
-        public double SpringsRear { 
-            get 
-            {
-                return calcBase(SpringsMin, SpringsMax, (1 - WeightRatio));
-            } 
-        }
+        public double SpringsFront => calcBase(SpringsMin, SpringsMax, WeightRatio);
+        public double SpringsRear => calcBase(SpringsMin, SpringsMax, (1 - WeightRatio));
 
         private double _compMin;
         public double CompMin { get { return _compMin; }
@@ -118,20 +93,10 @@ namespace TunerLib
             } 
         }
 
-        public double CompFront {
-            get 
-            {
-                return calcBase(CompMin, CompMax, WeightRatio);
-            }
-        }
-        public double CompRear {
-            get 
-            {
-                return calcBase(CompMin, CompMax, (1 - WeightRatio));
-            }
-        }
-        public double ReboundFront { get { return CompFront * 0.6; } }
-        public double ReboundRear { get { return CompRear * 0.6; } }
+        public double CompFront => calcBase(CompMin, CompMax, WeightRatio);
+        public double CompRear => calcBase(CompMin, CompMax, (1 - WeightRatio));
+        public double BumpFront => CompFront * 0.6;
+        public double BumpRear => CompRear * 0.6;
 
         public Tuner()
         {

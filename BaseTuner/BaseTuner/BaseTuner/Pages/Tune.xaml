@@ -83,15 +83,15 @@
                     </StackLayout>
                 </Grid>
                 
-                <Label Style="{StaticResource LargeHeader}">Shocks Rebound</Label>
+                <Label Style="{StaticResource LargeHeader}">Bump</Label>
                 <Grid>
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource MediumHeader}">Front:</Label>
-                        <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundFront}"></Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding BumpFront}"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Grid.Column="1">
                         <Label Style="{StaticResource MediumHeader}">Rear:</Label>
-                        <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundRear}"></Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding BumpRear}"></Label>
                     </StackLayout>
                 </Grid>
             </StackLayout>
