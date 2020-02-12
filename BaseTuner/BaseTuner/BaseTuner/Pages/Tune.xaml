@@ -75,11 +75,11 @@
 
                     <StackLayout Orientation="Horizontal" Grid.Row="1">
                         <Label Style="{StaticResource MediumHeader}">Front:</Label>
-                        <Label Style="{StaticResource MediumHeader}" Text="{Binding CompFront}"></Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundFront}"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
                         <Label Style="{StaticResource MediumHeader}">Rear:</Label>
-                        <Label Style="{StaticResource MediumHeader}" Text="{Binding CompRear}"></Label>
+                        <Label Style="{StaticResource MediumHeader}" Text="{Binding ReboundRear}"></Label>
                     </StackLayout>
                 </Grid>
                 
