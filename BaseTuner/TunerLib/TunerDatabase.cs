@@ -65,10 +65,5 @@ namespace TunerLib
         {
             return Database.DeleteAsync(tuner);
         }
-
-        public Task<int> DelteAll()
-        {
-            return Database.DeleteAllAsync<Tuner>();
-        }
     }
 }
