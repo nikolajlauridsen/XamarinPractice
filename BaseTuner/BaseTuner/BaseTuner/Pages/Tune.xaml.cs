@@ -33,6 +33,7 @@ namespace BaseTuner.Pages
 
         public void ChangeContext(Tuner tune)
         {
+            _tuner = tune;
             BindingContext = tune;
         }
 

@@ -20,17 +20,23 @@ namespace BaseTuner.Pages
             InitializeComponent();
 
             Tunes = new ObservableCollection<Tuner>();
-            MyListView.ItemsSource = Tunes;
-            LoadTunes();
+            //MyListView.ItemsSource = Tunes;
+            //LoadTunes();
         }
 
-        async void LoadTunes()
+        //async void LoadTunes()
+        //{
+        //    List<Tuner> tunes = await App.Database.GetTunersAsync();
+        //    foreach (Tuner tune in tunes)
+        //    {
+        //        Tunes.Add(tune);
+        //    }
+        //}
+
+        protected override async void OnAppearing()
         {
-            List<Tuner> tunes = await App.Database.GetTunersAsync();
-            foreach (Tuner tune in tunes)
-            {
-                Tunes.Add(tune);
-            }
+            base.OnAppearing();
+            MyListView.ItemsSource = await App.Database.GetTunersAsync();
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
