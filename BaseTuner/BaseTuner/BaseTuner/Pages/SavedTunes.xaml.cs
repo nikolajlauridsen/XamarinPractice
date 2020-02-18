@@ -19,19 +19,7 @@ namespace BaseTuner.Pages
         {
             InitializeComponent();
 
-            Tunes = new ObservableCollection<Tuner>();
-            //MyListView.ItemsSource = Tunes;
-            //LoadTunes();
         }
-
-        //async void LoadTunes()
-        //{
-        //    List<Tuner> tunes = await App.Database.GetTunersAsync();
-        //    foreach (Tuner tune in tunes)
-        //    {
-        //        Tunes.Add(tune);
-        //    }
-        //}
 
         protected override async void OnAppearing()
         {
@@ -43,11 +31,24 @@ namespace BaseTuner.Pages
         {
             if (e.Item == null)
                 return;
+
             Tuner tune = e.Item as Tuner;
-
-            MainPage root = this.Parent as MainPage;
-            root.SwitchToTuner(tune);
-
+            if (DeleteMode.IsToggled)
+            {
+                bool confirmation = await DisplayAlert("Delete", "Are you sure you want to delete this?\nThis is permanent", "Yes", "No");
+                if (confirmation)
+                {
+                    await App.Database.DeleteItemAsync(tune);
+                    // I know this isn't very effective...
+                    MyListView.ItemsSource = await App.Database.GetTunersAsync();
+                }
+            }
+            else
+            {
+                MainPage root = this.Parent as MainPage;
+                root.SwitchToTuner(tune);
+            }
+            
             ////Deselect Item
             ((ListView)sender).SelectedItem = null;
         }

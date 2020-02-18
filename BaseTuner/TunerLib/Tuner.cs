@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using SQLite;
 
 namespace TunerLib
 {
@@ -22,6 +23,8 @@ namespace TunerLib
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
 
         private double _weightRatio;
         public double WeightRatio { 

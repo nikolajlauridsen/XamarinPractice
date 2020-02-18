@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace TunerLib
 
         async Task InitializeAsync()
         {
+            // await Database.DropTableAsync<Tuner>();
             if (!initialized)
             {
                 if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Tuner).Name))
@@ -62,6 +64,11 @@ namespace TunerLib
         public Task<int> DeleteItemAsync(Tuner tuner)
         {
             return Database.DeleteAsync(tuner);
+        }
+
+        public Task<int> DelteAll()
+        {
+            return Database.DeleteAllAsync<Tuner>();
         }
     }
 }
