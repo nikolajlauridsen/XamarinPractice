@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BaseTuner.Pages;
+using TunerLib;
 using Xamarin.Forms;
 
 namespace BaseTuner
@@ -13,10 +15,24 @@ namespace BaseTuner
     [DesignTimeVisible(false)]
     public partial class MainPage : TabbedPage
     {
+        private Tune tunerPage;
+        private SavedTunes savedPage;
         public MainPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            
+            tunerPage = new Tune() {Title = "Tune"};
+            savedPage = new SavedTunes() {Title = "Saved Tunes"};
+
+            this.Children.Add(tunerPage);
+            this.Children.Add(savedPage);
+        }
+
+        public void SwitchToTuner(Tuner tuner)
+        {
+            tunerPage.ChangeContext(tuner);
+            CurrentPage = tunerPage;
         }
     }
 }

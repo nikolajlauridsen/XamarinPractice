@@ -9,7 +9,8 @@
             Title="BaseTuner">
 
     <TabbedPage.Children>
-        <pages:Tune Title="Tune"></pages:Tune>
+        <!--<pages:Tune Title="Tune"></pages:Tune>
+        <pages:SavedTunes Title="Saved tunes"></pages:SavedTunes>-->
     </TabbedPage.Children>
 
 

@@ -21,6 +21,8 @@ namespace TunerLib
         };
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public string Name { get; set; }
+
         private double _weightRatio;
         public double WeightRatio { 
             get => _weightRatio;

@@ -11,18 +11,18 @@
             <StackLayout Orientation="Vertical" Margin="20" HorizontalOptions="Center">
 
                 <Label Style="{StaticResource LargeHeader}">Weight ratio</Label>
-                <local:NumberEntry Placeholder="0.6" Keyboard="Numeric" Text="{Binding WeightRatio}"></local:NumberEntry>
+                <local:NumberEntry Placeholder="0,6" Keyboard="Numeric" Text="{Binding WeightRatio}"></local:NumberEntry>
 
                 <Label Style="{StaticResource LargeHeader}" Padding="0,20,0,0">Roll bars</Label>
                 <Grid>
                     <StackLayout Orientation="Horizontal">
                         <Label Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Min:</Label>
-                        <local:NumberEntry HorizontalOptions="Start"  WidthRequest="80" Placeholder="50.5" Keyboard="Numeric" Text="{Binding RollMin}"></local:NumberEntry>
+                        <local:NumberEntry HorizontalOptions="Start"  WidthRequest="80" Placeholder="50,5" Keyboard="Numeric" Text="{Binding RollMin}"></local:NumberEntry>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" Grid.Column="1">
                         <Label  Style="{StaticResource MediumHeader}" VerticalTextAlignment="Center">Max:</Label>
-                        <local:NumberEntry WidthRequest="80" Placeholder="215.5" Keyboard="Numeric" Text="{Binding RollMax}"></local:NumberEntry>
+                        <local:NumberEntry WidthRequest="80" Placeholder="215,5" Keyboard="Numeric" Text="{Binding RollMax}"></local:NumberEntry>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" Grid.Row="1">
@@ -94,6 +94,10 @@
                         <Label Style="{StaticResource MediumHeader}" Text="{Binding BumpRear}"></Label>
                     </StackLayout>
                 </Grid>
+
+                <Label Text="Name" Style="{StaticResource LargeHeader}" Padding="0,40,0,0"></Label>
+                <Entry Placeholder="Trueno" Text="{Binding Name}"></Entry>
+                <Button Text="Save tune" Clicked="SaveTune"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
