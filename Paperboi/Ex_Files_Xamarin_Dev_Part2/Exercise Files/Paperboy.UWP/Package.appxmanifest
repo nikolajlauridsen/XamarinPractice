@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+
+  <Identity
+    Name="efcff098-2fc3-49e8-817d-a171aa8ed83e"
+    Publisher="CN=codes"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="efcff098-2fc3-49e8-817d-a171aa8ed83e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>Paperboy</DisplayName>
+    <PublisherDisplayName>codes</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+    <Dependencies>
+      <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+    </Dependencies>
+    <Resources>
+      <Resource Language="x-generate" />
+    </Resources>
+    <Applications>
+      <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="FPCL.WIndows.App">
+        <uap:VisualElements DisplayName="Paperboy" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Paperboy" BackgroundColor="#0059B2">
+          <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+          </uap:DefaultTile>
+          <uap:SplashScreen Image="Assets\pb_splash.png" BackgroundColor="#0059B2" />
+        </uap:VisualElements>
+      </Application>
+    </Applications>
+    <Capabilities>
+      <Capability Name="internetClient" />
+    </Capabilities>
+  </Package>

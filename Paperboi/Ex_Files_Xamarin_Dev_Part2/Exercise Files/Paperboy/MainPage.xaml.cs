@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Paperboi.Pages;
 using Xamarin.Forms;
 
-namespace Paperboi
+namespace Paperboy
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
     public partial class MainPage : TabbedPage
     {
         public MainPage()
@@ -21,13 +16,16 @@ namespace Paperboi
 
         protected override void OnAppearing()
         {
+            Plugin.Connectivity.CrossConnectivity.Current.ConnectivityChanged += Current_ConnectivityChanged;
+
             base.OnAppearing();
         }
 
-        private async void MenuItem_OnClicked(object sender, EventArgs e)
+        private void Current_ConnectivityChanged(object sender, Plugin.Connectivity.Abstractions.ConnectivityChangedEventArgs e)
         {
-            await Navigation.PushAsync(new Page2());
+            
         }
+
         private async void OnSettingsClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Pages.SettingsPage());

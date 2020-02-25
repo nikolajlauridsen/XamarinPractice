@@ -8,7 +8,7 @@
              x:Class="Paperboi.MainPage">
 
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Text="2" Clicked="MenuItem_OnClicked"></ToolbarItem>
+        <ToolbarItem Text="Settings" IconImageSource="icon_settings.png" Order="Primary" Clicked="OnSettingsClicked"/>
     </TabbedPage.ToolbarItems>
 
     <TabbedPage.Children>
