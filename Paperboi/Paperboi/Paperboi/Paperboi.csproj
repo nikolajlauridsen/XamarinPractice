@@ -16,10 +16,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\TrendingPage.xaml.cs">
+      <DependentUpon>TrendingPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Pages\ListViewPage1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Page1.xaml">
+    <EmbeddedResource Update="Pages\TrendingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Page2.xaml">

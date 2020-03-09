@@ -8,11 +8,11 @@
              x:Class="Paperboi.MainPage">
 
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Text="Settings" IconImageSource="icon_settings.png" Order="Primary" Clicked="OnSettingsClicked"/>
+        <ToolbarItem  Text="Settings" IconImageSource="icon_settings.png" Order="Primary" Clicked="OnSettingsClicked"/>
     </TabbedPage.ToolbarItems>
 
     <TabbedPage.Children>
-        <pages:Page1 Title="Page 1"></pages:Page1>
+        <pages:TrendingPage Title="Trending"></pages:TrendingPage>
         <pages:TestingPage Title="Testing"></pages:TestingPage>
         <pages:ListViewPage1 Title="List view"></pages:ListViewPage1>
     </TabbedPage.Children>
