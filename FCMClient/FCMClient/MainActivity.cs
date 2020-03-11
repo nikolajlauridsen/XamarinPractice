@@ -25,10 +25,26 @@ namespace FCMClient
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
             msgText = FindViewById<TextView>(Resource.Id.msgText);
+
+            if (Intent.Extras != null)
+            {
+                foreach (string key in Intent.Extras.KeySet())
+                {
+                    string value = Intent.Extras.GetString(key);
+                    Log.Debug(TAG, $"Key: {key} Value: {value}");
+                }
+            }
             
             IsPlayServicesAvailable();
 
             CreateNotificationChannel();
+
+            Button logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
+            logTokenButton.Click += (sender, e) =>
+                {
+                    Log.Debug(TAG, $"InstanceID token: {FirebaseInstanceId.Instance.Token}");
+                };
+
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
