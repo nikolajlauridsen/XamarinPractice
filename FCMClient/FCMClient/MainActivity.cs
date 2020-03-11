@@ -45,6 +45,20 @@ namespace FCMClient
                     Log.Debug(TAG, $"InstanceID token: {FirebaseInstanceId.Instance.Token}");
                 };
 
+            Button subscribeButton = FindViewById<Button>(Resource.Id.subscribeButton);
+            subscribeButton.Click += (sender, e) =>
+            {
+                FirebaseMessaging.Instance.SubscribeToTopic("news");
+                Log.Debug(TAG, "Subscribed to remote notifications");
+            };
+
+            Button unsubBtn = FindViewById<Button>(Resource.Id.unsubscribeButton);
+            unsubBtn.Click += (sender, e) =>
+            {
+                FirebaseMessaging.Instance.UnsubscribeFromTopic("news");
+                Log.Debug(TAG, "Unsubscribed from remote notifications");
+            };
+
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
